@@ -8,12 +8,35 @@ Para pessoas que queiram testar seus conhecimentos em diversas áreas através d
 
 ## Papéis
 
-Jogador: pode criar uma conta, responder quizzes, visualizar a pontuação em cada quiz e compartilhar sua pontuação.
+<strong>Jogador</strong>: pode criar uma conta, responder quizzes, compartilhar sua pontuação e visualizar estatísticas como: tempo empregado para responder o quiz; pontuação.
 
 ## Requisitos Funcionais
 
 ### Acesso ao aplicativo
-RF-1: O app deve permitir que o jogador crie uma conta com nome, email, senha e foto.
-RF-2: O app deve permitir que o usuário faça login com email e senha previamente cadastrados.
+- <strong>RF-1</strong>: O app deve permitir que o jogador crie uma conta com nome, email, senha e foto.
+- <strong>RF-2</strong>: O app deve permitir que o usuário faça login com email e senha previamente cadastrados.
 
-### 
+### Quiz
+- <strong>RF-3</strong>: O app deve permitir que o usuário escolha entre áreas de conhecimentos
+- <strong>RF-4</strong>: Cada quiz deve possuir 10 perguntas.
+- <strong>RF-5</strong>: Para cada pergunta deve haver 4 (quatro) alternativas e 1 (uma) resposta correta.
+- <strong>RF-6</strong>: Ao enviar uma resposta o app deve mostrar a próxima pergunta.
+
+### Visualização de estatísticas
+- <strong>RF-7</strong>: Ao final do quiz, o app deve mostrar os acertos, o tempo que levou para responder as 10 perguntas e uma mensagem informando se foi uma pontuação bem sucedida ou mal sucedida.
+- <strong>RF-8</strong>: Se o número de acertos seja maior ou igual a 6, a mensagem é positiva. Caso contrário, ou seja, a pontuação menor que 6, a mensagem é negativa.
+- <strong>RF-9</strong>: O app deve mostrar todas as estatísticas do usuário em um painel.
+
+### Compartilhamento de pontuação
+- <strong>RF-10</strong>: O app deve permitir que o usuário compartilhe em suas redes sociais a pontuação obtida em determinado quiz. 
+- <strong>RF-11</strong>: As informações a serem compartilhadas devem ser as seguintes: nome do quiz, área de conhecimento e pontuação.
+
+### Entradas do app
+- Nome, email, senha e foto
+
+### Saídas do app
+- Acertos, tempo e mensagem de feedback
+
+#### Dicionário
+- Usuário/jogador: pessoa que pode responder quizzes
+- Estatísticas: tempo empregado na resposta ao quiz, acertos e mensagem de feedback
