@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="boas_vindas">Olá,  %1$s</string>
+    <string name="acertos"> %2$d acertos</string>
+    <string name="ver_detalhes">Ver detalhes</string>
+    <string name="areas_conhecimento">Áreas de conhecimento</string>
+    <string name="acertos2">Acertos: %2$d</string>
+    <string name="parabens">Parabéns!!</string>
+    <string name="bom_trabalho">Bom trabalho!</string>
+    <string name="tempo_de_resposta">Tempo de resposta</string>
+    <string name="tenta_de_novo">Tentar de novo</string>
+    <string name="voltar_ao_inicio">Voltar ao início</string>
+    <string name="que_pena">Que pena…</string>
+    <string name="talvez_na_proxima">Talvez na próxima!</string>
+    <string name="editar_foto">Editar foto</string>
+    <string name="salvar">Salvar</string>
+    <string name="alteracoes_sucesso">Alterações salvas com sucesso!</string>
+    <string name="alteracoes_erro">Erro ao salvar alterações. Tente novamente.</string>
+
+
+
+
+</resources>
