@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Quiz</string>
     <string name="action_settings">Settings</string>
@@ -18,10 +19,11 @@
     <string name="cadastro">Cadastro</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="boas_vindas">Olá,  %1$s</string>
-    <string name="acertos"> %2$d acertos</string>
-    <string name="ver_detalhes">Ver detalhes</string>
+    <string name="email_home">%1$s</string>
+    <string name="acertos_num">%2$d \nacertos</string>
+    <string name="ver_detalhes"><u>Ver detalhes</u></string>
     <string name="areas_conhecimento">Áreas de conhecimento</string>
-    <string name="acertos2">Acertos: %2$d</string>
+    <string name="acertos_painel">Acertos: %2$d</string>
     <string name="parabens">Parabéns!!</string>
     <string name="bom_trabalho">Bom trabalho!</string>
     <string name="tempo_de_resposta">Tempo de resposta</string>
@@ -35,6 +37,7 @@
     <string name="alteracoes_erro">Erro ao salvar alterações. Tente novamente.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="foto_de_perfil_do_usuario">Foto de perfil do usuário</string>
 
 
 </resources>
