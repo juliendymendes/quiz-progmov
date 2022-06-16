@@ -45,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/boas_vindas"
-                    android:textSize="17sp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
                     tools:text="Olá, Amanda"
                     android:fontFamily="@font/montserrat_semibold"
@@ -68,7 +68,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_estatisticas"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="40pt"
         android:orientation="horizontal"
         android:backgroundTint="@color/bege"
@@ -96,9 +96,9 @@
             android:fontFamily="@font/montserrat_regular"
             android:textSize="14sp"
             android:textColor="@color/verde"
-            android:layout_marginStart="90pt"
+            android:layout_marginStart="102pt"
             android:layout_marginTop="35dp"
-            android:layout_marginEnd="25dp"
+            android:layout_marginEnd="20dp"
             />
     </androidx.cardview.widget.CardView>
 
@@ -116,6 +116,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleViewHome"
+        android:paddingHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/areas_list_item"
