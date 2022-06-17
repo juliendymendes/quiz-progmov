@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         RecyclerView recyclerView = binding.recycleViewHome;
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        AreasConhecimentoAdapter adapter = new AreasConhecimentoAdapter(data);
+        AreasConhecimentoAdapter adapter = new AreasConhecimentoAdapter(this, data);
         recyclerView.setAdapter(adapter);
     }
 }
