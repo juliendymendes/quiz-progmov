@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +34,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.perfil.setOnClickListener(view1 -> {
+            NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_perfilFragment);
+        });
+
 
         int i = 0;
         while(i < 10){
@@ -43,7 +48,7 @@ public class HomeFragment extends Fragment {
         RecyclerView recyclerView = binding.recycleViewHome;
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        AreasConhecimentoAdapter adapter = new AreasConhecimentoAdapter(data);
+        AreasConhecimentoAdapter adapter = new AreasConhecimentoAdapter(this, data);
         recyclerView.setAdapter(adapter);
     }
 }

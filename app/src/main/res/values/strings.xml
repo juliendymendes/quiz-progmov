@@ -31,13 +31,12 @@
     <string name="voltar_ao_inicio">Voltar ao início</string>
     <string name="que_pena">Que pena…</string>
     <string name="talvez_na_proxima">Talvez na próxima!</string>
-    <string name="editar_foto">Editar foto</string>
+    <string name="editar_foto"><u>Editar foto</u></string>
     <string name="salvar">Salvar</string>
     <string name="alteracoes_sucesso">Alterações salvas com sucesso!</string>
     <string name="alteracoes_erro">Erro ao salvar alterações. Tente novamente.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="foto_de_perfil_do_usuario">Foto de perfil do usuário</string>
+    <string name="proxima">Próxima</string>
 
 
 </resources>

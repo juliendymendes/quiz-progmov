@@ -6,7 +6,9 @@
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/btn_style.xml" value="0.3365" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/et_style.xml" value="0.3365" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/login.xml" value="0.284" />
+        <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/perfil_padrao.xml" value="0.321" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/profile_img_style.xml" value="0.3395" />
+        <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/rb_style.xml" value="0.284" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/success_icon.xml" value="0.1825" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/font/fonts.xml" value="0.33796296296296297" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/font/montserrat_bold.xml" value="0.38666666666666666" />
@@ -18,6 +20,8 @@
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_first.xml" value="0.3625" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_home.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_perfil.xml" value="0.5" />
+        <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_quiz.xml" value="0.33" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_second.xml" value="0.67" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/menu/menu_main.xml" value="0.3625" />
       </map>
