@@ -12,6 +12,7 @@
     >
 
     <LinearLayout
+            android:id="@+id/perfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -20,6 +21,7 @@
                 android:id="@+id/cv_foto_perfil"
                 android:layout_width="58pt"
                 android:layout_height="58pt"
+                android:backgroundTint="@color/azul_escuro"
                 app:cardCornerRadius="100dp"
 
                 >
@@ -28,7 +30,7 @@
                     android:layout_width="58pt"
                     android:layout_height="58pt"
                     tools:src="@tools:sample/avatars"
-                    android:src="@drawable/profile"
+                    android:src="@drawable/perfil_padrao"
                     android:scaleType="centerCrop"
                     android:contentDescription="@string/foto_de_perfil_do_usuario" />
             </androidx.cardview.widget.CardView>
