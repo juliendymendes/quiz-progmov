@@ -12,6 +12,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="login">Login</string>
+    <string name="nome">Nome</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
@@ -23,7 +24,6 @@
     <string name="acertos_num">%2$d \nacertos</string>
     <string name="ver_detalhes"><u>Ver detalhes</u></string>
     <string name="areas_conhecimento">Áreas de conhecimento</string>
-    <string name="acertos_painel">Acertos: %2$d</string>
     <string name="parabens">Parabéns!!</string>
     <string name="bom_trabalho">Bom trabalho!</string>
     <string name="tempo_de_resposta">Tempo de resposta</string>
@@ -37,6 +37,14 @@
     <string name="alteracoes_erro">Erro ao salvar alterações. Tente novamente.</string>
     <string name="foto_de_perfil_do_usuario">Foto de perfil do usuário</string>
     <string name="proxima">Próxima</string>
+    <string name="numero_acertos">8/10</string>
+    <string name="numero_erros">4/10</string>
+    <string name="tempo_em_numero">1 min.</string>
+    <string name="acertos_painel">Acertos: 10</string>
+    <string name="tempo_painel">Tempo:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

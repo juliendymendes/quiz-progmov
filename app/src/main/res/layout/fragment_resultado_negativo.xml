@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".telas.ResultadoNegativoFragment"
+    android:background="@color/azul_escuro">
+
+
+    <ImageView
+        android:id="@+id/iv_resultado_negativo"
+        android:layout_width="416dp"
+        android:layout_height="289dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/triste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_que_pena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="147dp"
+        android:text="@string/que_pena"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_resultado_negativo" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_tempo"
+        android:layout_width="163dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/bege"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_que_pena">
+
+        <TextView
+            android:id="@+id/tv_tempo"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="25dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/tempo_em_numero"
+            android:textColor="@color/preto_56"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_tempo_de_resposta"
+            android:layout_width="147dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="70dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/tempo_de_resposta"
+            android:textColor="@color/preto_56"
+            android:textSize="14sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_resultado"
+        android:layout_width="163dp"
+        android:layout_height="115dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/bege"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_que_pena">
+
+        <TextView
+            android:id="@+id/tv_numero_acertos"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="25dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/numero_erros"
+            android:textColor="@color/preto_56"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_talvez_na_proxima"
+            android:layout_width="117dp"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="70dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/talvez_na_proxima"
+            android:textColor="@color/preto_56"
+            android:textSize="14sp" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_tente_denovo"
+        style="@style/botao_submit"
+        android:layout_height="65dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="112dp"
+        android:text="@string/tenta_de_novo"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_resultado" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
