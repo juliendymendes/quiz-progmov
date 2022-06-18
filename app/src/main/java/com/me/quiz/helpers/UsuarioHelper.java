@@ -89,6 +89,20 @@ public class UsuarioHelper{
         db.delete("usuario", "idUsuario = ? " , arg);
     }
 
+    public int login(String email, String senha){
+
+        String[] args = new String[2];
+        args[0] = email;
+        args[1] = senha;
+        Cursor cursor = appDatabase.getReadableDatabase().rawQuery("SELECT idUsuario FROM usuario WHERE email = ? AND senha = ? LIMIT 1", args);
+        if(cursor.moveToFirst()){
+            return cursor.getInt(0);
+        }else{
+            return -1;
+        }
+
+
+    }
 
 
 
