@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_claro"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".telas.CadastroFragment"
+    >
+
+    <ImageView
+        android:id="@+id/iv_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginBottom="25dp"
+        android:src="@drawable/cadastro" />
+
+    <TextView
+        android:id="@+id/cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/cadastro"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+    <EditText
+        android:id="@+id/ed_nome"
+        style="@style/text_input"
+        android:layout_marginBottom="25dp"
+        android:hint="@string/nome"
+        android:textColorHint="@color/preto_56"
+        android:paddingHorizontal="15dp"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:id="@+id/ed_email"
+        style="@style/text_input"
+        android:layout_marginBottom="25dp"
+        android:hint="@string/email"
+        android:textColorHint="@color/preto_56"
+        android:paddingHorizontal="15dp"
+        android:inputType="textEmailAddress"
+        />
+
+    <EditText
+        android:id="@+id/ed_senha"
+        android:layout_marginBottom="25dp"
+        android:textColorHint="@color/preto_56"
+        style="@style/text_input"
+        android:hint="@string/senha"
+        android:paddingHorizontal="15dp"
+        android:inputType="textPassword"
+        />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cadastrar"
+        style="@style/botao_submit"
+        android:layout_height="65dp"
+        android:layout_marginBottom="70dp"
+        android:paddingHorizontal="57dp"
+        android:paddingVertical="15dp"
+        android:text="@string/cadastrar"
+        app:cornerRadius="12dp" />
+
+
+</LinearLayout>

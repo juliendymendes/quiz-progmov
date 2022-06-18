@@ -12,6 +12,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="login">Login</string>
+    <string name="nome">Nome</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
@@ -37,6 +38,8 @@
     <string name="alteracoes_erro">Erro ao salvar alterações. Tente novamente.</string>
     <string name="foto_de_perfil_do_usuario">Foto de perfil do usuário</string>
     <string name="proxima">Próxima</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
