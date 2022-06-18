@@ -14,3 +14,5 @@
 .cxx
 local.properties
 .jpg
+.db
+.sqlite
