@@ -1,5 +1,7 @@
 package com.me.quiz.entidades;
 
+import com.me.quiz.utils.Md5Hash;
+
 public class Usuario {
 
     private int id;
@@ -13,7 +15,7 @@ public class Usuario {
     public Usuario( String nome, String email, String senha, int qtsAcertos) {
         this.nome = nome;
         this.email = email;
-        this.senha = senha;
+        this.senha = Md5Hash.md5(senha);
         this.qtsAcertos = qtsAcertos;
     }
 
