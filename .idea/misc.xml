@@ -5,9 +5,13 @@
       <map>
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/drawable/cadastro.xml" value="0.1955" />
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/areas_list_item.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/content_main.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/estastistica_painel.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/estatistica_painel.xml" value="0.5" />
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_cadastro.xml" value="0.25" />
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_home.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_login.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_painel.xml" value="0.33" />
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_perfil.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_quiz.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_resultado_negativo.xml" value="0.1693840579710145" />
