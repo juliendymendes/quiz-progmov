@@ -20,7 +20,7 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="boas_vindas">Olá,  %1$s</string>
     <string name="email_home">%1$s</string>
-    <string name="acertos_num">%2$d \nacertos</string>
+    <string name="acertos_num">%1$d \nacertos</string>
     <string name="ver_detalhes"><u>Ver detalhes</u></string>
     <string name="areas_conhecimento">Áreas de conhecimento</string>
     <string name="acertos_painel">Acertos: %2$d</string>
