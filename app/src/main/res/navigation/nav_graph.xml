@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_cadastroFragment5"
+            app:destination="@id/cadastroFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -25,6 +28,9 @@
         <action
             android:id="@+id/action_homeFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_painelFragment"
+            app:destination="@id/painelFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
@@ -36,4 +42,14 @@
         android:name="com.me.quiz.telas.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/cadastroFragment"
+        android:name="com.me.quiz.telas.CadastroFragment"
+        android:label="fragment_cadastro"
+        tools:layout="@layout/fragment_cadastro" />
+    <fragment
+        android:id="@+id/painelFragment"
+        android:name="com.me.quiz.telas.PainelFragment"
+        android:label="fragment_painel"
+        tools:layout="@layout/fragment_painel" />
 </navigation>

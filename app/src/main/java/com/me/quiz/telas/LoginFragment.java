@@ -46,6 +46,10 @@ public class LoginFragment extends Fragment {
             login();
         });
 
+        binding.tvCadastreSe.setOnClickListener(view1 -> {
+            NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_cadastroFragment5);
+
+        });
 
 
     }

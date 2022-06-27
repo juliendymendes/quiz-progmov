@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categorias">
+        <item>"Arts &amp; Literature"</item>
+        <item>"Film &amp; TV"</item>
+        <item>"Food &amp; Drink"</item>
+        <item>"General Knowledge"</item>
+        <item>"Geography"</item>
+        <item>"History"</item>
+        <item>"Music"</item>
+        <item>"Science"</item>
+        <item>"Society &amp; Culture"</item>
+        <item>"Sport &amp; Leisure"</item>
+
+    </string-array>
+
+</resources>
