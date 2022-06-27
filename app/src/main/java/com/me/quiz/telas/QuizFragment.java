@@ -9,9 +9,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import com.me.quiz.R;
 import com.me.quiz.databinding.FragmentQuizBinding;
+import com.me.quiz.entidades.Questao;
+import com.me.quiz.servicos.RetrofitClient;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class QuizFragment extends Fragment {
@@ -31,6 +39,26 @@ public class QuizFragment extends Fragment {
 
         binding.rgAlternativas.setOnCheckedChangeListener((radioGroup, i) -> {
             System.out.println(i);
+        });
+
+        getQuestoes();
+    }
+
+    private void getQuestoes() {
+        Call<List<Questao>> call = RetrofitClient.getInstance().getApi().getQuestoes();
+        call.enqueue(new Callback<List<Questao>>() {
+            @Override
+            public void onResponse(Call<List<Questao>> call, Response<List<Questao>> response) {
+                List<Questao> questoes = response.body();
+
+               binding.tvDescricao.setText(questoes.get(0).getQuestao());
+            }
+
+            @Override
+            public void onFailure(Call<List<Questao>> call, Throwable t) {
+                Toast.makeText(getContext(), "Ops, algo deu errado. Tente novamente.", Toast.LENGTH_LONG).show();
+            }
+
         });
     }
 }
