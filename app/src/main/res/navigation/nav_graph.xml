@@ -46,7 +46,11 @@
         android:id="@+id/cadastroFragment"
         android:name="com.me.quiz.telas.CadastroFragment"
         android:label="fragment_cadastro"
-        tools:layout="@layout/fragment_cadastro" />
+        tools:layout="@layout/fragment_cadastro">
+        <action
+            android:id="@+id/action_cadastroFragment5_to_loginFragment"
+            app:destination="@id/loginFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/painelFragment"
         android:name="com.me.quiz.telas.PainelFragment"

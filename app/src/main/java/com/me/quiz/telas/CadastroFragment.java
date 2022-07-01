@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,7 +42,9 @@ public class CadastroFragment extends Fragment {
 
         binding.btnCadastrar.setOnClickListener(view1 -> {
             cadastrar();
+            NavHostFragment.findNavController(this).navigate(R.id.action_cadastroFragment5_to_loginFragment);
         });
+
 
     }
 
