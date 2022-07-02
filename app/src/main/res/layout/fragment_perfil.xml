@@ -29,10 +29,25 @@
             android:contentDescription="@string/foto_de_perfil_do_usuario" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
+    <Button
+        android:id="@+id/tirarfoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/editar_foto"
+        android:text="tirar foto"
+        android:onClick="tirarFoto"
+        android:backgroundTint="@color/laranja"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="15sp"
+        android:layout_marginBottom="25dp"
+        />
+    <Button
+        android:id="@+id/carregarfoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="carregar foto"
+        android:onClick="carregarFoto"
+        android:backgroundTint="@color/laranja"
         android:textColor="@color/white"
         android:fontFamily="@font/montserrat_regular"
         android:textSize="15sp"
