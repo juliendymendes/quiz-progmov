@@ -79,7 +79,7 @@ public class UsuarioHelper{
         cv.put("senha", usuario.getSenha());
         cv.put("qtdAcertos", usuario.getQtsAcertos());
         String[] args = {String.valueOf(usuario.getId())};
-        db.update("usuario", cv, "idJogador=?", args);
+        db.update("usuario", cv, "idUsuario=?", args);
         db.close();
     }
 
