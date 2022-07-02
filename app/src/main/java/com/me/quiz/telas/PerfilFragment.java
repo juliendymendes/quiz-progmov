@@ -49,6 +49,8 @@ public class PerfilFragment extends Fragment {
     private EditText edtNome, edtEmail, edtSenha;
     Usuario usuario, altUsuario;
     private ImageView image;
+    private Button btnTirarFoto;
+    private Button btnCarregarFoto;
     private static final int PERMISSION_REQUEST_CODE = 200;
     static final int GALLERY = 1;
     static final int REQUEST_IMAGE_CAPTURE = 2;
@@ -66,6 +68,8 @@ public class PerfilFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_perfil, container,false);
         image = (ImageView) rootView.findViewById(R.id.img_foto_perfil);
+        btnTirarFoto = rootView.findViewById(R.id.tirarfoto);
+        btnCarregarFoto = rootView.findViewById(R.id.carregarfoto);
         return rootView;
 
     }
@@ -228,7 +232,12 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        btnTirarFoto.setOnClickListener(view1 -> {
+            tirarFoto(view);
+        });
+        btnCarregarFoto.setOnClickListener(view1 -> {
+            carregarFoto(view);
+        });
 
     }
 
