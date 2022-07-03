@@ -5,12 +5,14 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.me.quiz.R;
 import com.me.quiz.databinding.FragmentCadastroBinding;
@@ -29,7 +31,7 @@ public class CadastroFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        binding = FragmentCadastroBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -55,7 +57,9 @@ public class CadastroFragment extends Fragment {
         String senha = edSenha.getText().toString();
 
         usuarioHelper.inserirUsuario(new Usuario(nome, email, senha, 0));
-
+        Toast.makeText(getContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+        NavHostFragment.findNavController(this).navigate(R.id.action_cadastroFragment_to_loginFragment);
+        
 
 
     }
