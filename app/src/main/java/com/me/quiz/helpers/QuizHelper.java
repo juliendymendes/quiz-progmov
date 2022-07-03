@@ -9,6 +9,8 @@ import com.me.quiz.database.AppDatabase;
 import com.me.quiz.entidades.Quiz;
 import com.me.quiz.entidades.Usuario;
 
+import java.util.ArrayList;
+
 public class QuizHelper {
 
     AppDatabase appDatabase;
@@ -47,19 +49,21 @@ public class QuizHelper {
 
     }
 
-    public Quiz getQuizPorNome(String nome){
-        Quiz quiz = new Quiz();
+    public ArrayList<Quiz> getQuizzesPorNome(String nome){
+        ArrayList<Quiz> quizzes = new ArrayList<>();
         String[] args = {String.valueOf(nome)};
-        Cursor cursor = appDatabase.getReadableDatabase().rawQuery("SELECT * FROM quiz WHERE nome LIKE ? LIMIT 1", args);
-
+        Cursor cursor = appDatabase.getReadableDatabase().rawQuery("SELECT * FROM quiz WHERE nome LIKE ?", args);
 
         while (cursor.moveToNext()){
+            Quiz quiz = new Quiz();
             quiz.setId(cursor.getInt(0));
             quiz.setNomeQuiz(cursor.getString(1));
             quiz.setAcertos(cursor.getInt(2));
             quiz.setTempo(cursor.getLong(3));
+
+            quizzes.add(quiz);
         }
-        return quiz;
+        return quizzes;
 
     }
 

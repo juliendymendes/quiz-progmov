@@ -41,19 +41,20 @@ public class ResultadoNegativoFragment extends Fragment {
         assert bundle != null;
         int acertos = bundle.getInt("acertos");
         Long tempo = bundle.getLong("tempo");
+        String categoria = bundle.getString("categoria");
 
         binding.tvTempo.setText(getString(R.string.tempo_em_numero, tempo));
 
         binding.tvNumeroAcertos.setText(getString(R.string.numero_acertos, acertos));
+        Bundle b = new Bundle();
+        b.putString("categoria", categoria);
 
         binding.btnTenteDenovo.setOnClickListener(view1 -> {
-            NavHostFragment.findNavController(this).navigate(R.id.action_resultadoNegativoFragment_to_homeFragment);
+            NavHostFragment.findNavController(this).navigate(R.id.action_resultadoNegativoFragment_to_quizFragment, b);
         });
 
         binding.tvVoltarAoInicio.setOnClickListener(view1 -> {
-            Bundle b = new Bundle();
-            b.putInt("idUsuario", UsuarioLogado.getInstancia().getId());
-            NavHostFragment.findNavController(this).navigate(R.id.action_resultadoNegativoFragment_to_homeFragment, b);
+            NavHostFragment.findNavController(this).navigate(R.id.action_resultadoNegativoFragment_to_homeFragment);
         });
     }
 }

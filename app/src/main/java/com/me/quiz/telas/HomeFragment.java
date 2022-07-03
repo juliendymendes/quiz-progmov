@@ -61,15 +61,6 @@ public class HomeFragment extends Fragment {
         binding.tvEmail.setText(getString(R.string.email_home, UsuarioLogado.getInstancia().getEmail()));
         binding.tvAcertos.setText(getString(R.string.acertos_num, UsuarioLogado.getInstancia().getQtsAcertos()));
 
-
-        String[] categorias = getResources().getStringArray(R.array.categorias);
-        for (String c:
-             categorias) {
-            Quiz quiz = new Quiz(c, 0, Long.parseLong("0"));
-            quizHelper.inserirQuiz(quiz);
-        }
-
-
         recyclerView = binding.recycleViewHome;
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
