@@ -26,7 +26,7 @@ public class QuizUsuarioHelper {
         db = appDatabase.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("idUsuario", usuario.getId());
-        cv.put("idQuiz", quiz.getIdQuiz());
+        cv.put("idQuiz", quiz.getId());
 
         db.insert("quiz_usuario", null, cv);
         db.close();
@@ -40,7 +40,7 @@ public class QuizUsuarioHelper {
         
         while (cursor.moveToNext()){
             Quiz quiz = new Quiz();
-            quiz.setIdQuiz(cursor.getInt(0));
+            quiz.setId(cursor.getInt(0));
 
             lista.add(quiz);
         }

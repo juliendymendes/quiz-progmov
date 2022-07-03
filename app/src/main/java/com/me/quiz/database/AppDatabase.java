@@ -19,7 +19,7 @@ public class AppDatabase extends SQLiteOpenHelper {
     private static final String TABLE_CREATE_USUARIO = "CREATE TABLE IF NOT EXISTS usuario(idUsuario INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "nome TEXT, email TEXT, senha TEXT, qtdAcertos INTEGER);";
 
-    private static final String TABLE_CREATE_QUIZ = "CREATE TABLE IF NOT EXISTS quiz(idQuiz INTEGER PRIMARY KEY);";
+    private static final String TABLE_CREATE_QUIZ = "CREATE TABLE IF NOT EXISTS quiz(idQuiz INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, acertos INTEGER, tempo DECIMAL);";
 
     private static final String TABLE_CREATE_QUIZ_USUARIO = "CREATE TABLE IF NOT EXISTS quiz_usuario(id INTEGER PRIMARY KEY AUTOINCREMENT, idUsuario INTEGER , idQuiz INTEGER);";
 
