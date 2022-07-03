@@ -49,19 +49,17 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.perfil.setOnClickListener(view1 -> {
-            login();
+            NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_perfilFragment);
         });
 
         binding.cvEstatisticas.setOnClickListener(view1 -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_painelFragment);
         });
 
-
-
         binding.tvBoasVindas.setText(getString(R.string.boas_vindas, UsuarioLogado.getInstancia().getNome()));
         binding.tvEmail.setText(getString(R.string.email_home, UsuarioLogado.getInstancia().getEmail()));
         binding.tvAcertos.setText(getString(R.string.acertos_num, UsuarioLogado.getInstancia().getQtsAcertos()));
-        binding.tvSenha.setText(UsuarioLogado.getInstancia().getSenha());
+
 
         String[] categorias = getResources().getStringArray(R.array.categorias);
         for (String c:
@@ -80,15 +78,5 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void login() {
-        String email = binding.tvEmail.getText().toString();
-        String senha = binding.tvSenha.getText().toString();
-        senha = Md5Hash.md5(senha);
-
-        int id = usuarioHelper.login(email, senha);
-        Bundle bundle = new Bundle();
-        bundle.putInt("idUsuario", id);
-        NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_perfilFragment, bundle);
-    }
 
 }
