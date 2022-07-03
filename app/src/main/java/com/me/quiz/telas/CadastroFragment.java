@@ -43,9 +43,7 @@ public class CadastroFragment extends Fragment {
 
         binding.btnCadastrar.setOnClickListener(view1 -> {
             cadastrar();
-            NavHostFragment.findNavController(this).navigate(R.id.action_cadastroFragment5_to_loginFragment);
         });
-
 
     }
 
