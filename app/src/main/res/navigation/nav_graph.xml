@@ -31,12 +31,22 @@
         <action
             android:id="@+id/action_homeFragment_to_painelFragment"
             app:destination="@id/painelFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
         android:name="com.me.quiz.telas.QuizFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_resultadoPositivoFragment"
+            app:destination="@id/resultadoPositivoFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_resultadoNegativoFragment"
+            app:destination="@id/resultadoNegativoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/perfilFragment"
         android:name="com.me.quiz.telas.PerfilFragment"
@@ -46,10 +56,32 @@
         android:id="@+id/cadastroFragment"
         android:name="com.me.quiz.telas.CadastroFragment"
         android:label="fragment_cadastro"
-        tools:layout="@layout/fragment_cadastro" />
+        tools:layout="@layout/fragment_cadastro" >
+        <action
+            android:id="@+id/action_cadastroFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/painelFragment"
         android:name="com.me.quiz.telas.PainelFragment"
         android:label="fragment_painel"
         tools:layout="@layout/fragment_painel" />
+    <fragment
+        android:id="@+id/resultadoNegativoFragment"
+        android:name="com.me.quiz.telas.ResultadoNegativoFragment"
+        android:label="fragment_resultado_negativo"
+        tools:layout="@layout/fragment_resultado_negativo" >
+        <action
+            android:id="@+id/action_resultadoNegativoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoPositivoFragment"
+        android:name="com.me.quiz.telas.ResultadoPositivoFragment"
+        android:label="fragment_resultado_positivo"
+        tools:layout="@layout/fragment_resultado_positivo" >
+        <action
+            android:id="@+id/action_resultadoPositivoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
