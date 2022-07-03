@@ -69,9 +69,7 @@ public class PerfilFragment extends Fragment {
         binding.tvEditarFoto.setOnClickListener(view1 -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_perfilFragment_to_tirarFoto);
         });
-        Bitmap bitmap = getArguments().getParcelable("SEU_BITMAP");
 
-        binding.imgFotoPerfil.setImageBitmap(bitmap);
         binding.edNome.setText(UsuarioLogado.getInstancia().getNome());
         binding.edEmail.setText(UsuarioLogado.getInstancia().getEmail());
         binding.edSenha.setText(UsuarioLogado.getInstancia().getSenha());

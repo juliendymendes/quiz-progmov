@@ -19,7 +19,6 @@ import com.me.quiz.entidades.Quiz;
 import com.me.quiz.entidades.UsuarioLogado;
 import com.me.quiz.helpers.QuizHelper;
 import com.me.quiz.helpers.UsuarioHelper;
-import com.me.quiz.utils.Md5Hash;
 
 
 public class HomeFragment extends Fragment {
