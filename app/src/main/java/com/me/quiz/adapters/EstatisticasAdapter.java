@@ -13,10 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.me.quiz.R;
 import com.me.quiz.entidades.Estatistica;
 
+import java.util.ArrayList;
+
 public class EstatisticasAdapter extends RecyclerView.Adapter<EstatisticasAdapter.ViewHolder> {
 
     Fragment context;
-    Estatistica[] data;
+    ArrayList<Estatistica> data;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView tvArea;
@@ -46,7 +48,7 @@ public class EstatisticasAdapter extends RecyclerView.Adapter<EstatisticasAdapte
         }
     }
 
-    public EstatisticasAdapter(Fragment context, Estatistica[] estatisticas){
+    public EstatisticasAdapter(Fragment context, ArrayList<Estatistica> estatisticas){
         this.context = context;
         this.data = estatisticas;
     }
@@ -62,13 +64,13 @@ public class EstatisticasAdapter extends RecyclerView.Adapter<EstatisticasAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        viewHolder.getTvArea().setText(data[position].getAreaConhecimento());
-        viewHolder.getTvAcertos().setText(String.valueOf(data[position].getQtdAcertos()));
-        viewHolder.getTvTempo().setText(data[position].getTempo());
+        viewHolder.getTvArea().setText(data.get(position).getAreaConhecimento());
+        viewHolder.getTvAcertos().setText(String.valueOf(data.get(position).getQtdAcertos()));
+        viewHolder.getTvTempo().setText(String.valueOf(data.get(position).getTempo()));
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return data.size();
     }
 }

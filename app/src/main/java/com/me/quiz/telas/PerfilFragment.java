@@ -56,7 +56,7 @@ public class PerfilFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentPerfilBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -73,6 +73,7 @@ public class PerfilFragment extends Fragment {
         binding.edNome.setText(UsuarioLogado.getInstancia().getNome());
         binding.edEmail.setText(UsuarioLogado.getInstancia().getEmail());
         binding.edSenha.setText(UsuarioLogado.getInstancia().getSenha());
+
 
     }
 

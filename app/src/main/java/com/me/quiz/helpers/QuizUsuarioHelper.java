@@ -36,11 +36,15 @@ public class QuizUsuarioHelper {
 
         ArrayList<Quiz> lista = new ArrayList<>();
         String[] args = {String.valueOf(usuario.getId())};
-        Cursor cursor = appDatabase.getReadableDatabase().rawQuery("SELECT idQuiz FROM quiz_usuario WHERE idUsuario = ? LIMIT 1", args);
+
+        Cursor cursor = appDatabase.getReadableDatabase().rawQuery("select * from quiz left join quiz_usuario where quiz_usuario.idUsuario = ? and quiz_usuario.idQuiz = quiz.idQuiz", args);
         
         while (cursor.moveToNext()){
             Quiz quiz = new Quiz();
             quiz.setId(cursor.getInt(0));
+            quiz.setNomeQuiz(cursor.getString(1));
+            quiz.setAcertos(cursor.getInt(2));
+            quiz.setTempo(cursor.getLong(3));
 
             lista.add(quiz);
         }

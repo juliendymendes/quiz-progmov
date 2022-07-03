@@ -60,6 +60,9 @@ public class LoginFragment extends Fragment {
         String email = binding.edEmail.getText().toString();
         String senha = binding.edSenha.getText().toString();
 
+        //senha = Md5Hash.md5(senha);
+
+
         int id = usuarioHelper.login(email, senha);
         if(id != -1){
 

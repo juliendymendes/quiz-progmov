@@ -48,6 +48,9 @@ public class Usuario {
     }
 
     public void setSenha(String senha) {
+
+        //this.senha = Md5Hash.md5(senha);
+
         this.senha = senha;
     }
 
@@ -56,7 +59,7 @@ public class Usuario {
     }
 
     public void setQtsAcertos(int qtsAcertos) {
-        this.qtsAcertos = qtsAcertos;
+        this.qtsAcertos += qtsAcertos;
     }
 
     @Override

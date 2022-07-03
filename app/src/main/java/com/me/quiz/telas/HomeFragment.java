@@ -55,6 +55,7 @@ public class HomeFragment extends Fragment {
             NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_painelFragment);
         });
 
+
         binding.tvBoasVindas.setText(getString(R.string.boas_vindas, UsuarioLogado.getInstancia().getNome()));
         binding.tvEmail.setText(getString(R.string.email_home, UsuarioLogado.getInstancia().getEmail()));
         binding.tvAcertos.setText(getString(R.string.acertos_num, UsuarioLogado.getInstancia().getQtsAcertos()));
@@ -68,6 +69,7 @@ public class HomeFragment extends Fragment {
 
         }
 
+
         recyclerView = binding.recycleViewHome;
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
@@ -75,7 +77,6 @@ public class HomeFragment extends Fragment {
                 getResources().getStringArray(R.array.categorias));
         recyclerView.setAdapter(adapter);
     }
-
 
 
 }

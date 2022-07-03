@@ -32,6 +32,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,6 +46,10 @@ public class QuizFragment extends Fragment {
     Questao questaoAtual;
     Date date;
     String categoria;
+
+    ArrayList<String> respostasAleatorias = new ArrayList();
+    ArrayList<Quiz> quizzesUsuario =  new ArrayList<>();
+    ArrayList<Integer> idQuizzesUsuarios = new ArrayList();
 
     Long tempoInicio;
     Long tempoFim;
@@ -94,25 +99,24 @@ public class QuizFragment extends Fragment {
                 assert questoes != null;
 
                 questaoAtual = questoes.get(indexQuestaoAtual);
+                geraRespostasAleatorias();
                 carregaQuestao(questaoAtual);
                 indexQuestaoAtual += 1;
+
                 binding.btnProxima.setOnClickListener(view -> {
-                    verificaResposta();
-                   if(indexQuestaoAtual < 10){
-                       if(binding.rgAlternativas.getCheckedRadioButtonId() != -1) {
+                    if(verificaResposta()){
+                        if(indexQuestaoAtual < 10){
 
-                           questaoAtual = questoes.get(indexQuestaoAtual);
-                           indexQuestaoAtual += 1;
-                           carregaQuestao(questaoAtual);
+                            questaoAtual = questoes.get(indexQuestaoAtual);
+                            geraRespostasAleatorias();
+                            indexQuestaoAtual += 1;
+                            carregaQuestao(questaoAtual);
 
-                       }else {
-                           Toast.makeText(getContext(), "Selecione uma resposta!", Toast.LENGTH_SHORT).show();
-                       }
-                   }else{
+                        }else{
+                            navegaParaTelaResultados();
+                        }
+                    }
 
-
-                        navegaParaTelaResultados();
-                   }
                 });
             }
 
@@ -126,19 +130,25 @@ public class QuizFragment extends Fragment {
                     binding.rgAlternativas.clearCheck();
                     
                     binding.tvDescricao.setText(questaoAtual.getQuestao());
-                    binding.op1.setText(questaoAtual.getRespostasIncorretas().get(0));
-                    binding.op2.setText(questaoAtual.getRespostasIncorretas().get(1));
-                    binding.op3.setText(questaoAtual.getRespostasIncorretas().get(2));
-                    binding.op4.setText(questaoAtual.getRespostaCorreta());
+                    binding.op1.setText(respostasAleatorias.get(0));
+                    binding.op2.setText(respostasAleatorias.get(1));
+                    binding.op3.setText(respostasAleatorias.get(2));
+                    binding.op4.setText(respostasAleatorias.get(3));
             }
 
-            public void verificaResposta(){
-                RadioButton rb = getActivity().findViewById(binding.rgAlternativas.getCheckedRadioButtonId());
+            public boolean verificaResposta(){
+                if(binding.rgAlternativas.getCheckedRadioButtonId() != -1) {
+                    RadioButton rb = getActivity().findViewById(binding.rgAlternativas.getCheckedRadioButtonId());
 
-                String resposta = rb.getText().toString();
-                if(resposta.equals(questaoAtual.getRespostaCorreta())){
-                    acertos +=1;
-                    System.out.println("Acertou ein");
+                    String resposta = rb.getText().toString();
+
+                    if(resposta.equals(questaoAtual.getRespostaCorreta())){
+                        acertos +=1;
+                    }
+                    return true;
+                }else{
+                    Toast.makeText(getContext(), "Selecione uma resposta!", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
             }
 
@@ -146,11 +156,33 @@ public class QuizFragment extends Fragment {
                 tempoFim = date.getTime();
                 tempoFinal = (System.currentTimeMillis() - tempoInicio)/1000;
 
-                Quiz quiz = quizHelper.getQuizPorNome(categoria);
-                quiz.setAcertos(acertos);
-                quiz.setTempo(tempoFinal);
-                quizHelper.atualizarQuiz(quiz);
-                quizUsuarioHelper.inserirQuizParaUsuario(quiz, UsuarioLogado.getInstancia());
+                Quiz quiz = new Quiz(questaoAtual.getCategoria(), acertos, tempoFinal);
+                quizHelper.inserirQuiz(quiz);
+                ArrayList<Quiz> quizzes = quizHelper.getQuizzesPorNome(questaoAtual.getCategoria());
+                quizzesUsuario = quizUsuarioHelper.getQuizzesPorUsuario(UsuarioLogado.getInstancia());
+
+                for (Quiz q :
+                        quizzesUsuario) {
+                    idQuizzesUsuarios.add(q.getId());
+                }
+
+               if(quizzesUsuario.size() > 0) {
+                    for (Quiz q :
+                            quizzes) {
+
+                        if (!idQuizzesUsuarios.contains(q.getId())) {
+                            quizUsuarioHelper.inserirQuizParaUsuario(q, UsuarioLogado.getInstancia());
+                        }
+                    }
+                }else{
+                   for (Quiz q :
+                           quizzes) {
+                       quizUsuarioHelper.inserirQuizParaUsuario(q, UsuarioLogado.getInstancia());
+                       System.out.println(q.getNomeQuiz());
+                   }
+
+               }
+
                 UsuarioLogado.getInstancia().setQtsAcertos(acertos);
                 usuarioHelper.atualizarUsuario(UsuarioLogado.getInstancia());
 
@@ -158,12 +190,18 @@ public class QuizFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putInt("acertos", acertos);
                 bundle.putLong("tempo", tempoFinal);
+                bundle.putString("categoria", categoria);
                 if(acertos >= 6){
                     NavHostFragment.findNavController(getParentFragment()).navigate(R.id.action_quizFragment_to_resultadoPositivoFragment, bundle);
                 }else {
                     NavHostFragment.findNavController(getParentFragment()).navigate(R.id.action_quizFragment_to_resultadoNegativoFragment, bundle);
                 }
-                System.out.println(acertos);
+            }
+
+            public void geraRespostasAleatorias(){
+                Random random = new Random();
+                respostasAleatorias = questaoAtual.getRespostasIncorretas();
+                respostasAleatorias.add(random.nextInt(4), questaoAtual.getRespostaCorreta());
             }
 
 
