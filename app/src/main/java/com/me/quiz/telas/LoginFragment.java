@@ -1,5 +1,6 @@
 package com.me.quiz.telas;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.me.quiz.R;
 import com.me.quiz.databinding.FragmentLoginBinding;
 import com.me.quiz.entidades.Usuario;
+import com.me.quiz.entidades.UsuarioLogado;
 import com.me.quiz.helpers.UsuarioHelper;
 import com.me.quiz.utils.Md5Hash;
 
@@ -61,11 +63,13 @@ public class LoginFragment extends Fragment {
 
         int id = usuarioHelper.login(email, senha);
         if(id != -1){
-            Bundle bundle = new Bundle();
-            bundle.putInt("idUsuario", id);
-            NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_homeFragment, bundle);
+
+            Usuario usuario = usuarioHelper.getUsuarioPorId(id);
+            UsuarioLogado.setInstancia(usuario);
+
+            NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_homeFragment);
         }else{
-            Toast.makeText(getContext(), "Email ou senha incorretos. Tente novamente.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Email ou senha incorretos. Tente novamente.", Toast.LENGTH_SHORT).show();
         }
 
 
