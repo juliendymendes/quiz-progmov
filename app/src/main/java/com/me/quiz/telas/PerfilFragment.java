@@ -38,6 +38,7 @@ import com.me.quiz.R;
 
 import com.me.quiz.databinding.FragmentHomeBinding;
 import com.me.quiz.entidades.Usuario;
+import com.me.quiz.entidades.UsuarioLogado;
 import com.me.quiz.helpers.UsuarioHelper;
 import com.me.quiz.databinding.FragmentPerfilBinding;
 
@@ -55,7 +56,7 @@ public class PerfilFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentPerfilBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -68,14 +69,12 @@ public class PerfilFragment extends Fragment {
         binding.tvEditarFoto.setOnClickListener(view1 -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_perfilFragment_to_tirarFoto);
         });
-        Bundle bundle = getArguments();
-        int idUsuario = bundle.getInt("idUsuario");
-        Usuario usuario = usuarioHelper.getUsuarioPorId(idUsuario);
-        binding.edNome.setText(usuario.getNome());
-        binding.edEmail.setText(usuario.getEmail());
-        binding.edSenha.setText(usuario.getSenha());
 
-        return binding.getRoot();
+        binding.edNome.setText(UsuarioLogado.getInstancia().getNome());
+        binding.edEmail.setText(UsuarioLogado.getInstancia().getEmail());
+        binding.edSenha.setText(UsuarioLogado.getInstancia().getSenha());
+
+
     }
 
 }

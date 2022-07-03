@@ -30,7 +30,14 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/tv_editar_foto"
+        android:text="@string/editar_foto"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        />
 
     <EditText
         android:id="@+id/ed_nome"
@@ -38,7 +45,7 @@
         android:paddingHorizontal="15dp"
         android:layout_marginVertical="25dp"
         android:textColorHint="@color/black"
-
+        android:inputType="text"
         />
 
 
