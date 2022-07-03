@@ -101,16 +101,22 @@ public class PerfilFragment extends Fragment {
         String email = edEmail.getText().toString();
         String senha = edSenha.getText().toString();
 
-        UsuarioLogado.getInstancia().setNome(nome);
-        UsuarioLogado.getInstancia().setEmail(email);
-        UsuarioLogado.getInstancia().setSenha(senha);
-        if(foto != null){
-            UsuarioLogado.getInstancia().setFoto(foto);
+        if(nome.equals("") || email.equals("") || senha.equals("")) {
+            Toast.makeText(getContext(), "Os campos não podem ser vazios.", Toast.LENGTH_SHORT).show();
+        }else{
+            UsuarioLogado.getInstancia().setNome(nome);
+            UsuarioLogado.getInstancia().setEmail(email);
+            UsuarioLogado.getInstancia().setSenha(senha);
+            if(foto != null){
+                UsuarioLogado.getInstancia().setFoto(foto);
+            }
+
+            usuarioHelper.atualizarUsuario(UsuarioLogado.getInstancia());
+            Toast.makeText(getContext(), "Alterações salvas com sucesso!", Toast.LENGTH_SHORT).show();
+            NavHostFragment.findNavController(this).navigate(R.id.action_perfilFragment_to_homeFragment);
         }
 
-        usuarioHelper.atualizarUsuario(UsuarioLogado.getInstancia());
-        Toast.makeText(getContext(), "Alterações salvas com sucesso!", Toast.LENGTH_SHORT).show();
-        NavHostFragment.findNavController(this).navigate(R.id.action_perfilFragment_to_homeFragment);
+
     }
 
 

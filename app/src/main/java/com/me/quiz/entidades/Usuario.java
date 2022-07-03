@@ -1,6 +1,7 @@
 package com.me.quiz.entidades;
 
 
+import com.me.quiz.utils.Md5Hash;
 
 public class Usuario {
 
@@ -17,6 +18,7 @@ public class Usuario {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        //this.senha = Md5Hash.md5(senha);
         this.qtsAcertos = qtsAcertos;
     }
 

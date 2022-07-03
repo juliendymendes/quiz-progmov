@@ -62,7 +62,6 @@ public class LoginFragment extends Fragment {
 
         //senha = Md5Hash.md5(senha);
 
-
         int id = usuarioHelper.login(email, senha);
         if(id != -1){
 
