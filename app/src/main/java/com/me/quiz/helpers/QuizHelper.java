@@ -17,12 +17,15 @@ public class QuizHelper {
     public QuizHelper(Context context){
         this.appDatabase = new AppDatabase(context);
         this.db = appDatabase.getDb();
+
     }
 
     public void inserirQuiz(Quiz quiz){
         db = appDatabase.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("idQuiz", quiz.getIdQuiz());
+        cv.put("nome", quiz.getNomeQuiz());
+        cv.put("acertos", quiz.getAcertos());
+        cv.put("tempo", quiz.getTempo());
 
         db.insert("quiz", null, cv);
         db.close();
@@ -35,9 +38,41 @@ public class QuizHelper {
 
 
         while (cursor.moveToNext()){
-            quiz.setIdQuiz(cursor.getInt(0));
+            quiz.setId(cursor.getInt(0));
+            quiz.setNomeQuiz(cursor.getString(1));
+            quiz.setAcertos(cursor.getInt(2));
+            quiz.setTempo(cursor.getLong(3));
         }
         return quiz;
 
     }
+
+    public Quiz getQuizPorNome(String nome){
+        Quiz quiz = new Quiz();
+        String[] args = {String.valueOf(nome)};
+        Cursor cursor = appDatabase.getReadableDatabase().rawQuery("SELECT * FROM quiz WHERE nome LIKE ? LIMIT 1", args);
+
+
+        while (cursor.moveToNext()){
+            quiz.setId(cursor.getInt(0));
+            quiz.setNomeQuiz(cursor.getString(1));
+            quiz.setAcertos(cursor.getInt(2));
+            quiz.setTempo(cursor.getLong(3));
+        }
+        return quiz;
+
+    }
+
+    public void atualizarQuiz(Quiz quiz){
+        db = appDatabase.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("nome", quiz.getNomeQuiz());
+        cv.put("acertos", quiz.getAcertos());
+        cv.put("tempo", quiz.getTempo());
+
+        String[] args = {String.valueOf(quiz.getId())};
+        db.update("quiz", cv, "idQuiz=?", args);
+        db.close();
+    }
+
 }

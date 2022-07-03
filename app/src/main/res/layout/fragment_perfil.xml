@@ -29,16 +29,8 @@
             android:contentDescription="@string/foto_de_perfil_do_usuario" />
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/tirarfoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:backgroundTint="@color/laranja"
-        android:fontFamily="@font/montserrat_regular"
-        android:text="tirar foto"
-        android:textColor="@color/white"
-        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/tv_editar_foto"
 
     <EditText
         android:id="@+id/ed_nome"

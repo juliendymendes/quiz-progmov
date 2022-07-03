@@ -15,15 +15,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.me.quiz.R;
 import com.me.quiz.adapters.AreasConhecimentoAdapter;
 import com.me.quiz.databinding.FragmentHomeBinding;
-import com.me.quiz.entidades.Usuario;
+import com.me.quiz.entidades.Quiz;
+import com.me.quiz.entidades.UsuarioLogado;
+import com.me.quiz.helpers.QuizHelper;
 import com.me.quiz.helpers.UsuarioHelper;
 import com.me.quiz.utils.Md5Hash;
 
 
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
-    private final String[] data = new String[10];
     private UsuarioHelper usuarioHelper;
+    private QuizHelper quizHelper;
 
     RecyclerView recyclerView;
 
@@ -31,10 +33,11 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         usuarioHelper = new UsuarioHelper(getContext());
+        quizHelper = new QuizHelper(getContext());
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
@@ -53,21 +56,25 @@ public class HomeFragment extends Fragment {
             NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_painelFragment);
         });
 
-        Bundle bundle = getArguments();
-        assert bundle != null;
-        int idUsuario = bundle.getInt("idUsuario");
-        Usuario usuario = usuarioHelper.getUsuarioPorId(idUsuario);
 
-        binding.tvBoasVindas.setText(getString(R.string.boas_vindas, usuario.getNome()));
-        binding.tvEmail.setText(getString(R.string.email_home, usuario.getEmail()));
-        binding.tvAcertos.setText(getString(R.string.acertos_num, usuario.getQtsAcertos()));
+
+        binding.tvBoasVindas.setText(getString(R.string.boas_vindas, UsuarioLogado.getInstancia().getNome()));
+        binding.tvEmail.setText(getString(R.string.email_home, UsuarioLogado.getInstancia().getEmail()));
+        binding.tvAcertos.setText(getString(R.string.acertos_num, UsuarioLogado.getInstancia().getQtsAcertos()));
         binding.tvSenha.setText(usuario.getSenha());
+
+        String[] categorias = getResources().getStringArray(R.array.categorias);
+        for (String c:
+             categorias) {
+            Quiz quiz = new Quiz(c, 0, Long.parseLong("0"));
+            quizHelper.inserirQuiz(quiz);
 
 
         int i = 0;
         while (i < 10) {
             data[i] = "Filmes";
             i++;
+
         }
 
         recyclerView = binding.recycleViewHome;

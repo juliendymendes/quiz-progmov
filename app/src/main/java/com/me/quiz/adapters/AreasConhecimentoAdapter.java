@@ -1,6 +1,6 @@
 package com.me.quiz.adapters;
 
-import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,11 +58,14 @@ public class AreasConhecimentoAdapter extends RecyclerView.Adapter<AreasConhecim
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
 
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
         viewHolder.getTextView().setText(data[position]);
         viewHolder.getCardView().setOnClickListener(view -> {
-            NavHostFragment.findNavController(context).navigate(R.id.action_homeFragment_to_quizFragment);
+            String categoria = removeSpaces(data[position]);
+            Bundle bundle = new Bundle();
+            bundle.putString("categoria", categoria);
+            NavHostFragment.findNavController(context).navigate(R.id.action_homeFragment_to_quizFragment, bundle);
+
+
         });
 
 
@@ -73,4 +76,12 @@ public class AreasConhecimentoAdapter extends RecyclerView.Adapter<AreasConhecim
     public int getItemCount() {
         return data.length;
     }
+
+    private String removeSpaces(String s){
+
+        //nova=s.replace(" ", "");
+        return s.toLowerCase();
+    }
+
+
 }
