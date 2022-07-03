@@ -103,7 +103,18 @@ public class UsuarioHelper{
 
 
     }
+    public int home(String email){
+
+        String[] args = new String[2];
+        args[0] = email;
+        Cursor cursor = appDatabase.getReadableDatabase().rawQuery("SELECT idUsuario FROM usuario WHERE email = ? LIMIT 1", args);
+        if(cursor.moveToFirst()){
+            return cursor.getInt(0);
+        }else{
+            return -1;
+        }
 
 
+    }
 
 }

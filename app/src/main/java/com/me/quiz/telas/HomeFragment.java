@@ -19,7 +19,7 @@ import com.me.quiz.entidades.Quiz;
 import com.me.quiz.entidades.UsuarioLogado;
 import com.me.quiz.helpers.QuizHelper;
 import com.me.quiz.helpers.UsuarioHelper;
-
+import com.me.quiz.utils.Md5Hash;
 
 
 public class HomeFragment extends Fragment {
@@ -61,7 +61,6 @@ public class HomeFragment extends Fragment {
         binding.tvEmail.setText(getString(R.string.email_home, UsuarioLogado.getInstancia().getEmail()));
         binding.tvAcertos.setText(getString(R.string.acertos_num, UsuarioLogado.getInstancia().getQtsAcertos()));
 
-
         recyclerView = binding.recycleViewHome;
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
@@ -69,4 +68,5 @@ public class HomeFragment extends Fragment {
                 getResources().getStringArray(R.array.categorias));
         recyclerView.setAdapter(adapter);
     }
+
 }
