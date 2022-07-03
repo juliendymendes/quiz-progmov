@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/activity_perfil.xml" value="0.18" />
+        <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/activity_tirar_foto.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_home.xml" value="0.16" />
+        <entry key="..\:/Users/Not/Documents/GitHub/quiz-progmov/app/src/main/res/layout/fragment_perfil.xml" value="0.67" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/btn_style.xml" value="0.3365" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/et_style.xml" value="0.3365" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/drawable/login.xml" value="0.284" />
@@ -26,10 +28,8 @@
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_home.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_painel.xml" value="0.2975630611372381" />
-
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_perfil.xml" value="0.25" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_quiz.xml" value="0.3394919168591224" />
-
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_resultado_negativo.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_resultado_positivo.xml" value="0.2975630611372381" />
         <entry key="..\:/Users/julie/AndroidStudioProjects/Quiz/app/src/main/res/layout/fragment_second.xml" value="0.67" />

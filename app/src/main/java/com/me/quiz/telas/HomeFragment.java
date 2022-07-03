@@ -61,19 +61,13 @@ public class HomeFragment extends Fragment {
         binding.tvBoasVindas.setText(getString(R.string.boas_vindas, UsuarioLogado.getInstancia().getNome()));
         binding.tvEmail.setText(getString(R.string.email_home, UsuarioLogado.getInstancia().getEmail()));
         binding.tvAcertos.setText(getString(R.string.acertos_num, UsuarioLogado.getInstancia().getQtsAcertos()));
-        binding.tvSenha.setText(usuario.getSenha());
+        binding.tvSenha.setText(UsuarioLogado.getInstancia().getSenha());
 
         String[] categorias = getResources().getStringArray(R.array.categorias);
         for (String c:
              categorias) {
             Quiz quiz = new Quiz(c, 0, Long.parseLong("0"));
             quizHelper.inserirQuiz(quiz);
-
-
-        int i = 0;
-        while (i < 10) {
-            data[i] = "Filmes";
-            i++;
 
         }
 
@@ -85,7 +79,8 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(adapter);
     }
 
-    private void login(){
+
+    private void login() {
         String email = binding.tvEmail.getText().toString();
         String senha = binding.tvSenha.getText().toString();
         senha = Md5Hash.md5(senha);
@@ -94,6 +89,6 @@ public class HomeFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putInt("idUsuario", id);
         NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_perfilFragment, bundle);
-
     }
+
 }
