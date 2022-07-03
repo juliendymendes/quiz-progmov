@@ -9,6 +9,7 @@ public class Usuario {
     private String email;
     private String senha;
     private int qtsAcertos;
+    private byte[] foto = null;
 
     public Usuario(){}
 
@@ -60,6 +61,14 @@ public class Usuario {
 
     public void setQtsAcertos(int qtsAcertos) {
         this.qtsAcertos += qtsAcertos;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
 
     @Override

@@ -53,8 +53,8 @@
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" >
         <action
-            android:id="@+id/action_perfilFragment_to_tirarFoto"
-            app:destination="@id/tirarFoto" />
+            android:id="@+id/action_perfilFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastroFragment"
@@ -94,9 +94,4 @@
             android:id="@+id/action_resultadoPositivoFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
     </fragment>
-    <activity
-        android:id="@+id/tirarFoto"
-        android:name="com.me.quiz.TirarFoto"
-        android:label="activity_tirar_foto"
-        tools:layout="@layout/activity_tirar_foto" />
 </navigation>
