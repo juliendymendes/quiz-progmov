@@ -12,23 +12,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.me.quiz.R;
 import com.me.quiz.adapters.AreasConhecimentoAdapter;
 import com.me.quiz.adapters.EstatisticasAdapter;
 import com.me.quiz.databinding.FragmentPainelBinding;
 import com.me.quiz.entidades.Estatistica;
+import com.me.quiz.entidades.Quiz;
+import com.me.quiz.entidades.UsuarioLogado;
+import com.me.quiz.helpers.QuizUsuarioHelper;
+
+import java.util.ArrayList;
 
 
 public class PainelFragment extends Fragment {
-    Estatistica[] estatisticas = new Estatistica[5];
+    ArrayList<Estatistica> estatisticas;
     FragmentPainelBinding binding;
     RecyclerView recyclerView;
+
+    QuizUsuarioHelper quizUsuarioHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        quizUsuarioHelper = new QuizUsuarioHelper(getContext());
     }
 
     @Override
@@ -42,14 +50,20 @@ public class PainelFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        int i = 0;
-        while(i < 5){
-            estatisticas[i] = new Estatistica("Filme", 37, "1min");
-            i++;
+        estatisticas = new ArrayList<>();
+
+        ArrayList<Quiz> quizzesUsuario = quizUsuarioHelper.getQuizzesPorUsuario(UsuarioLogado.getInstancia());
+    
+        if(quizzesUsuario.size() > 0){
+            for (Quiz q :
+                    quizzesUsuario) {
+                estatisticas.add(new Estatistica(q.getNomeQuiz(), q.getAcertos(), q.getTempo()));
+            }
+        }else{
+            binding.tvAindaNaoJogou.setVisibility(View.VISIBLE);
         }
 
         recyclerView = binding.recyclerViewPainel;
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         EstatisticasAdapter adapter = new EstatisticasAdapter(this,
                 estatisticas);

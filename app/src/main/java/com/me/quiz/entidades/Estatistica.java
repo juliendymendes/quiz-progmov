@@ -3,9 +3,9 @@ package com.me.quiz.entidades;
 public class Estatistica {
     private String areaConhecimento;
     private int qtdAcertos;
-    private String tempo;
+    private Long tempo;
 
-    public Estatistica(String areaConhecimento, int qtdAcertos, String tempo) {
+    public Estatistica(String areaConhecimento, int qtdAcertos, Long tempo) {
         this.areaConhecimento = areaConhecimento;
         this.qtdAcertos = qtdAcertos;
         this.tempo = tempo;
@@ -27,11 +27,11 @@ public class Estatistica {
         this.qtdAcertos = qtdAcertos;
     }
 
-    public String getTempo() {
+    public Long getTempo() {
         return tempo;
     }
 
-    public void setTempo(String tempo) {
+    public void setTempo(Long tempo) {
         this.tempo = tempo;
     }
 }
