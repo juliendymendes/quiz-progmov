@@ -58,7 +58,7 @@ public class CadastroFragment extends Fragment {
 
         usuarioHelper.inserirUsuario(new Usuario(nome, email, senha, 0));
         Toast.makeText(getContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
-
+        NavHostFragment.findNavController(this).navigate(R.id.action_cadastroFragment_to_loginFragment);
 
     }
 
