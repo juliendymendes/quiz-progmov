@@ -28,7 +28,7 @@
     <string name="bom_trabalho">Bom trabalho!</string>
     <string name="tempo_de_resposta">Tempo de resposta</string>
     <string name="tenta_de_novo">Tentar de novo</string>
-    <string name="voltar_ao_inicio">Voltar ao início</string>
+    <string name="voltar_ao_inicio"><u>Voltar ao início</u></string>
     <string name="que_pena">Que pena…</string>
     <string name="talvez_na_proxima">Talvez na próxima!</string>
     <string name="editar_foto"><u>Editar foto</u></string>
@@ -37,10 +37,10 @@
     <string name="alteracoes_erro">Erro ao salvar alterações. Tente novamente.</string>
     <string name="foto_de_perfil_do_usuario">Foto de perfil do usuário</string>
     <string name="proxima">Próxima</string>
-    <string name="numero_acertos">8/10</string>
-    <string name="numero_erros">4/10</string>
-    <string name="tempo_em_numero">1 min.</string>
-    <string name="acertos_painel">Acertos: 10</string>
+    <string name="numero_acertos">%1$d /10</string>
+    <string name="numero_erros">%1$d /10</string>
+    <string name="tempo_em_numero">%1$d s</string>
+    <string name="acertos_painel">Acertos: %1$d</string>
     <string name="tempo_painel">Tempo:</string>
 
     <!-- TODO: Remove or change this placeholder text -->
