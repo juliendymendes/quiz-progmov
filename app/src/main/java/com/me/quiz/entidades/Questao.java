@@ -12,7 +12,7 @@ public class Questao {
     private String id;
     @SerializedName("correctAnswer")
     private String respostaCorreta;
-    @SerializedName("incorrectAnswer")
+    @SerializedName("incorrectAnswers")
     private ArrayList<String> respostasIncorretas;
     @SerializedName("question")
     private String questao;
