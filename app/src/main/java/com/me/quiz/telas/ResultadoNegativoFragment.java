@@ -1,5 +1,6 @@
 package com.me.quiz.telas;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -55,6 +56,18 @@ public class ResultadoNegativoFragment extends Fragment {
 
         binding.tvVoltarAoInicio.setOnClickListener(view1 -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_resultadoNegativoFragment_to_homeFragment);
+        });
+
+        binding.fabCompartilhar.setOnClickListener(view1 -> {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            String mensagem = "Confira minha pontuação no quiz " + categoria.toUpperCase() + ": " + acertos + " pontos!!";
+            sendIntent.putExtra(Intent.EXTRA_TEXT, mensagem);
+            sendIntent.setType("text/plain");
+
+            Intent shareIntent = Intent.createChooser(sendIntent, null);
+            startActivity(shareIntent);
+
         });
     }
 }

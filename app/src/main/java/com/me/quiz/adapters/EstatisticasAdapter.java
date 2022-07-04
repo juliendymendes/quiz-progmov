@@ -30,7 +30,7 @@ public class EstatisticasAdapter extends RecyclerView.Adapter<EstatisticasAdapte
             // Define click listener for the ViewHolder's View
             tvArea = view.findViewById(R.id.tv_area_painel) ;
             tvAcertos = view.findViewById(R.id.tv_acertos);
-            tvTempo = view.findViewById(R.id.tv_tempo);
+            tvTempo = view.findViewById(R.id.tv_tempo_painel);
 
         }
 
@@ -65,8 +65,8 @@ public class EstatisticasAdapter extends RecyclerView.Adapter<EstatisticasAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         viewHolder.getTvArea().setText(data.get(position).getAreaConhecimento());
-        viewHolder.getTvAcertos().setText(String.valueOf(data.get(position).getQtdAcertos()));
-        viewHolder.getTvTempo().setText(String.valueOf(data.get(position).getTempo()));
+        viewHolder.getTvAcertos().setText(context.getString(R.string.acertos_painel, data.get(position).getQtdAcertos()));
+        viewHolder.getTvTempo().setText(context.getString(R.string.tempo_painel, data.get(position).getTempo()));
     }
 
     @Override
