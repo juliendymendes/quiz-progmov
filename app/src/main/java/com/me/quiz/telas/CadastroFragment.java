@@ -55,11 +55,14 @@ public class CadastroFragment extends Fragment {
         String nome = edNome.getText().toString();
         String email = edEmail.getText().toString();
         String senha = edSenha.getText().toString();
+        if(nome.equals("") || email.equals("") || senha.equals("")){
+            Toast.makeText(getContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+        }else{
+            usuarioHelper.inserirUsuario(new Usuario(nome, email, senha, 0));
+            Toast.makeText(getContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+            NavHostFragment.findNavController(this).navigate(R.id.action_cadastroFragment_to_loginFragment);
+        }
 
-        usuarioHelper.inserirUsuario(new Usuario(nome, email, senha, 0));
-        Toast.makeText(getContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
-        NavHostFragment.findNavController(this).navigate(R.id.action_cadastroFragment_to_loginFragment);
-        
 
 
     }

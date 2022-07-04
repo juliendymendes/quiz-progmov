@@ -1,5 +1,7 @@
 package com.me.quiz.telas;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +21,8 @@ import com.me.quiz.entidades.Quiz;
 import com.me.quiz.entidades.UsuarioLogado;
 import com.me.quiz.helpers.QuizHelper;
 import com.me.quiz.helpers.UsuarioHelper;
-import com.me.quiz.utils.Md5Hash;
+
+import java.io.ByteArrayInputStream;
 
 
 public class HomeFragment extends Fragment {
@@ -55,7 +58,11 @@ public class HomeFragment extends Fragment {
         binding.cvEstatisticas.setOnClickListener(view1 -> {
             NavHostFragment.findNavController(this).navigate(R.id.action_homeFragment_to_painelFragment);
         });
-
+        if(UsuarioLogado.getInstancia().getFoto() != null){
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(UsuarioLogado.getInstancia().getFoto());
+            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+            binding.imgFotoPerfil.setImageBitmap(bitmap);
+        }
 
         binding.tvBoasVindas.setText(getString(R.string.boas_vindas, UsuarioLogado.getInstancia().getNome()));
         binding.tvEmail.setText(getString(R.string.email_home, UsuarioLogado.getInstancia().getEmail()));
@@ -68,5 +75,6 @@ public class HomeFragment extends Fragment {
                 getResources().getStringArray(R.array.categorias));
         recyclerView.setAdapter(adapter);
     }
+
 
 }

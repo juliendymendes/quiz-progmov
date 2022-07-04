@@ -34,9 +34,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_editar_foto"
         android:text="@string/editar_foto"
+        android:textColor="@color/white"
         android:fontFamily="@font/montserrat_regular"
         android:textSize="15sp"
-        android:textColor="@color/white"
+        android:layout_marginBottom="25dp"
+
         />
 
     <EditText

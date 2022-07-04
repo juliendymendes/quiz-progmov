@@ -29,6 +29,7 @@ public class UsuarioHelper{
         cv.put("email", usuario.getEmail());
         cv.put("senha", usuario.getSenha());
         cv.put("qtdAcertos", usuario.getQtsAcertos());
+        cv.put("foto", usuario.getFoto());
 
         db.insert("usuario", null, cv);
         db.close();
@@ -39,13 +40,13 @@ public class UsuarioHelper{
         String[] args = {String.valueOf(id)};
         Cursor cursor = appDatabase.getReadableDatabase().rawQuery("SELECT * FROM usuario WHERE idUsuario = ? LIMIT 1", args);
 
-
         while (cursor.moveToNext()){
             usuario.setId(cursor.getInt(0));
             usuario.setNome(cursor.getString(1));
             usuario.setEmail(cursor.getString(2));
             usuario.setSenha(cursor.getString(3));
             usuario.setQtsAcertos(cursor.getInt(4));
+            usuario.setFoto(cursor.getBlob(5));
         }
         return usuario;
 
@@ -64,6 +65,7 @@ public class UsuarioHelper{
             usuario.setEmail(cursor.getString(2));
             usuario.setSenha(cursor.getString(3));
             usuario.setQtsAcertos(cursor.getInt(4));
+            usuario.setFoto(cursor.getBlob(5));
 
             lista.add(usuario);
         }
@@ -78,6 +80,7 @@ public class UsuarioHelper{
         cv.put("email", usuario.getEmail());
         cv.put("senha", usuario.getSenha());
         cv.put("qtdAcertos", usuario.getQtsAcertos());
+        cv.put("foto", usuario.getFoto());
         String[] args = {String.valueOf(usuario.getId())};
         db.update("usuario", cv, "idUsuario=?", args);
         db.close();

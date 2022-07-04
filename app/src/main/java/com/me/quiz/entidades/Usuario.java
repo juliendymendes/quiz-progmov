@@ -1,5 +1,6 @@
 package com.me.quiz.entidades;
 
+
 import com.me.quiz.utils.Md5Hash;
 
 public class Usuario {
@@ -9,14 +10,15 @@ public class Usuario {
     private String email;
     private String senha;
     private int qtsAcertos;
+    private byte[] foto = null;
 
     public Usuario(){}
 
     public Usuario( String nome, String email, String senha, int qtsAcertos) {
         this.nome = nome;
         this.email = email;
-        //this.senha = Md5Hash.md5(senha);
         this.senha = senha;
+        //this.senha = Md5Hash.md5(senha);
         this.qtsAcertos = qtsAcertos;
     }
 
@@ -49,7 +51,9 @@ public class Usuario {
     }
 
     public void setSenha(String senha) {
+
         //this.senha = Md5Hash.md5(senha);
+
         this.senha = senha;
     }
 
@@ -59,6 +63,14 @@ public class Usuario {
 
     public void setQtsAcertos(int qtsAcertos) {
         this.qtsAcertos += qtsAcertos;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
 
     @Override
