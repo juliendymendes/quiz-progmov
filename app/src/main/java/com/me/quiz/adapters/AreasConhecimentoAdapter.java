@@ -60,7 +60,7 @@ public class AreasConhecimentoAdapter extends RecyclerView.Adapter<AreasConhecim
 
         viewHolder.getTextView().setText(data[position]);
         viewHolder.getCardView().setOnClickListener(view -> {
-            String categoria = removeSpaces(data[position]);
+            String categoria = lowerCase(data[position]);
             Bundle bundle = new Bundle();
             bundle.putString("categoria", categoria);
             NavHostFragment.findNavController(context).navigate(R.id.action_homeFragment_to_quizFragment, bundle);
@@ -77,9 +77,8 @@ public class AreasConhecimentoAdapter extends RecyclerView.Adapter<AreasConhecim
         return data.length;
     }
 
-    private String removeSpaces(String s){
+    private String lowerCase(String s){
 
-        //nova=s.replace(" ", "");
         return s.toLowerCase();
     }
 

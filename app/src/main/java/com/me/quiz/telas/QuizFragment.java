@@ -102,12 +102,14 @@ public class QuizFragment extends Fragment {
                 geraRespostasAleatorias();
                 carregaQuestao(questaoAtual);
                 indexQuestaoAtual += 1;
-
+                System.out.println(questaoAtual.getRespostaCorreta());
                 binding.btnProxima.setOnClickListener(view -> {
                     if(verificaResposta()){
                         if(indexQuestaoAtual < 10){
 
+
                             questaoAtual = questoes.get(indexQuestaoAtual);
+                            System.out.println(questaoAtual.getRespostaCorreta());
                             geraRespostasAleatorias();
                             indexQuestaoAtual += 1;
                             carregaQuestao(questaoAtual);

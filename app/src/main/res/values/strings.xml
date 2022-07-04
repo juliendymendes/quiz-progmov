@@ -41,11 +41,12 @@
     <string name="numero_erros">%1$d /10</string>
     <string name="tempo_em_numero">%1$d s</string>
     <string name="acertos_painel">Acertos: %1$d</string>
-    <string name="tempo_painel">Tempo:</string>
+    <string name="tempo_painel">Tempo: %1$d s</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="voce_ainda_nao_jogou">Você ainda não jogou nenhum quiz!</string>
+    <string name="compartilhar">Compartilhar</string>
 
 
 </resources>
